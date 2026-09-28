@@ -113,3 +113,15 @@
     box-shadow: 0 0 10px rgba(240, 171, 252, 0.4);
 }
 .city-meta { font-size: 11px; color: #94a3b8; margin-top: 4px; }
+.kpi-grid { grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.metric { font-size: 30px; }
+@media (max-width: 1100px) {
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+    .kpi-grid { grid-template-columns: 1fr; }
+    .metric { font-size: 26px; }
+    .bar-chart { gap: 8px; }
+    .bar-value { font-size: 9px; }
+    .header-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+}
