@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionCalls>
+        <name>Send_Confirmation_Email</name>
+        <label>Send Confirmation Email</label>
+        <locationX>176</locationX>
+        <locationY>120</locationY>
+        <actionName>Class_Booking__c.Send_Booking_Confirmation</actionName>
+        <actionType>emailAlert</actionType>
+        <flowTransactionModel>CurrentTransaction</flowTransactionModel>
+        <inputParameters>
+            <name>SObjectRowId</name>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputParameters>
+        <nameSegment>Class_Booking__c.Send_Booking_Confirmation</nameSegment>
+    </actionCalls>
+    <apiVersion>61.0</apiVersion>
+    <interviewLabel>Send Booking Confirmation Email {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Send Booking Confirmation Email</label>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Send_Confirmation_Email</targetReference>
+        </connector>
+        <object>Class_Booking__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

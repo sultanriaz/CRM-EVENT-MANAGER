@@ -1,0 +1,46 @@
+<template>
+    <div class="glass-dashboard">
+        <div class="header">
+            <h1>Fitness Hub <span>Command Center</span></h1>
+        </div>
+
+        <template if:true={error}>
+            <div class="error-banner">{errorMessage}</div>
+        </template>
+
+        <div class="kpi-grid">
+            <div class="glass-card">
+                <h3>Total Revenue</h3>
+                <div class="metric text-cyan">{revenue}</div>
+            </div>
+            <div class="glass-card">
+                <h3>Active Members</h3>
+                <div class="metric">{members}</div>
+            </div>
+            <div class="glass-card">
+                <h3>Attendance Rate</h3>
+                <div class="metric text-cyan">{attendance}</div>
+            </div>
+            <div class="glass-card">
+                <h3>Total Classes</h3>
+                <div class="metric">{classes}</div>
+            </div>
+            <div class="glass-card">
+                <h3>Professional Trainers</h3>
+                <div class="metric">{trainers}</div>
+            </div>
+            <div class="glass-card">
+                <h3>VIP Members</h3>
+                <div class="metric text-magenta">{vipMembers}</div>
+            </div>
+            <div class="glass-card">
+                <h3>Average Member Value</h3>
+                <div class="metric text-magenta">{averageValue}</div>
+            </div>
+            <div class="glass-card">
+                <h3>Today's Bookings</h3>
+                <div class="metric text-cyan">{todaysBookings}</div>
+            </div>
+        </div>
+    </div>
+</template>

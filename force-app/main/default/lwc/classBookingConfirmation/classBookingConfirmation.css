@@ -1,0 +1,55 @@
+:host {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+}
+
+.bc-container {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 40px 28px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.bc-check {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.bc-check__icon {
+    width: 56px;
+    height: 56px;
+}
+
+.bc-title {
+    margin: 0 0 8px;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: -0.015em;
+    color: #1d1d1f;
+}
+
+.bc-subtitle {
+    margin: 0 0 24px;
+    font-size: 15px;
+    color: #6e6e73;
+}
+
+.bc-summary {
+    background: #f5f5f7;
+    border-radius: 14px;
+    padding: 18px 20px;
+}
+
+.bc-summary__class {
+    margin: 0 0 4px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #1d1d1f;
+}
+
+.bc-summary__time {
+    margin: 0;
+    font-size: 14px;
+    color: #6e6e73;
+}

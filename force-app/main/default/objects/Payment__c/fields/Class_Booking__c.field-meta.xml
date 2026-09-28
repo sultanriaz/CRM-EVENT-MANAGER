@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Class_Booking__c</fullName>
+    <label>Class Booking</label>
+    <type>Lookup</type>
+    <referenceTo>Class_Booking__c</referenceTo>
+    <relationshipName>Payments</relationshipName>
+    <relationshipLabel>Payments</relationshipLabel>
+    <deleteConstraint>SetNull</deleteConstraint>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Class Booking</label>
+    <pluralLabel>Class Bookings</pluralLabel>
+    <description>Junction object connecting a Contact (member) to a Class, tracking one booking.</description>
+    <nameField>
+        <label>Class Booking Name</label>
+        <type>Text</type>
+    </nameField>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <sharingModel>Private</sharingModel>
+    <enableActivities>true</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+</CustomObject>

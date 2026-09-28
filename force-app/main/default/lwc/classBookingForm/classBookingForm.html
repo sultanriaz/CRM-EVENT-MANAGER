@@ -1,0 +1,71 @@
+<template>
+    <div class="chb-container">
+        <header class="chb-header">
+            <p class="chb-eyebrow">Community Fitness &amp; Wellness Hub</p>
+            <h1 class="chb-title">Book your class</h1>
+            <p class="chb-subtitle">Pick a class, tell us who you are, and you're in.</p>
+        </header>
+
+        <div class="chb-field-group">
+            <label class="chb-label" for="memberName">Full name</label>
+            <input
+                id="memberName"
+                type="text"
+                class="chb-input"
+                placeholder="Jane Appleseed"
+                value={memberName}
+                onchange={handleNameChange}
+            />
+        </div>
+
+        <div class="chb-field-group">
+            <label class="chb-label" for="memberEmail">Email</label>
+            <input
+                id="memberEmail"
+                type="email"
+                class="chb-input"
+                placeholder="jane@example.com"
+                value={memberEmail}
+                onchange={handleEmailChange}
+            />
+        </div>
+
+        <div class="chb-field-group">
+            <p class="chb-label">Choose a class</p>
+
+            <template if:true={isLoading}>
+                <div class="chb-skeleton-row"></div>
+                <div class="chb-skeleton-row"></div>
+                <div class="chb-skeleton-row"></div>
+            </template>
+
+            <template if:true={loadError}>
+                <p class="chb-empty">We couldn't load classes right now. Please try again shortly.</p>
+            </template>
+
+            <template if:false={isLoading}>
+                <template if:false={hasClasses}>
+                    <p class="chb-empty">No upcoming classes are open for booking right now.</p>
+                </template>
+
+                <div class="chb-class-grid">
+                    <template for:each={classes} for:item="cls">
+                        <div
+                            key={cls.id}
+                            data-id={cls.id}
+                            class={cls.cardClass}
+                            onclick={handleSelectClass}
+                        >
+                            <div class="class-card__top">
+                                <span class="class-card__name">{cls.className}</span>
+                                <span class="class-card__seats">{cls.seatsLabel}</span>
+                            </div>
+                            <p class="class-card__meta">{cls.formattedDate} · with {cls.trainerName}</p>
+                            <p class="class-card__desc">{cls.description}</p>
+                        </div>
+                    </template>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,64 @@
+<template>
+    <div class="glass-dashboard">
+        <div class="header header-row">
+            <h1>Fitness Hub <span>Command Center</span></h1>
+            <button class="refresh-btn" onclick={handleRefresh} disabled={isRefreshing}>{refreshLabel}</button>
+        </div>
+
+        <template if:true={error}>
+            <div class="error-banner">{errorMessage}</div>
+        </template>
+
+        <div class="kpi-grid">
+            <div class="glass-card"><h3>Total Revenue</h3><div class="metric text-cyan">{revenue}</div></div>
+            <div class="glass-card"><h3>Active Members</h3><div class="metric">{members}</div></div>
+            <div class="glass-card"><h3>Attendance Rate</h3><div class="metric text-cyan">{attendance}</div></div>
+            <div class="glass-card"><h3>Total Classes</h3><div class="metric">{classes}</div></div>
+            <div class="glass-card"><h3>Professional Trainers</h3><div class="metric">{trainers}</div></div>
+            <div class="glass-card"><h3>VIP Members</h3><div class="metric text-magenta">{vipMembers}</div></div>
+            <div class="glass-card"><h3>Average Member Value</h3><div class="metric text-magenta">{averageValue}</div></div>
+            <div class="glass-card"><h3>Today's Bookings</h3><div class="metric text-cyan">{todaysBookings}</div></div>
+        </div>
+        <div class="chart-grid">
+            <div class="glass-card chart-wide">
+                <h3>Revenue Intelligence | Last 6 Months</h3>
+                <div class="bar-chart">
+                    <template for:each={monthlyBars} for:item="b">
+                        <div key={b.key} class="bar-col">
+                            <div class="bar-value">{b.valueLabel}</div>
+                            <div class="bar-track"><div class="bar-fill" style={b.style}></div></div>
+                            <div class="bar-label">{b.label}</div>
+                        </div>
+                    </template>
+                </div>
+            </div>
+
+            <div class="glass-card">
+                <h3>Member Growth</h3>
+                <svg class="growth-svg" viewBox="0 0 300 130">
+                    <polygon class="growth-area" points={growthArea}></polygon>
+                    <polyline class="growth-line" points={growthLine}></polyline>
+                    <template for:each={growthPoints} for:item="p">
+                        <circle key={p.key} class="growth-dot" cx={p.cx} cy={p.cy} r="4"></circle>
+                    </template>
+                </svg>
+                <div class="growth-labels">
+                    <template for:each={growthPoints} for:item="p">
+                        <div key={p.key} class="growth-label"><span>{p.label}</span><strong>{p.total}</strong></div>
+                    </template>
+                </div>
+            </div>
+
+            <div class="glass-card">
+                <h3>Franchise Performance</h3>
+                <template for:each={cityBars} for:item="c">
+                    <div key={c.key} class="city-row">
+                        <div class="city-head"><span class="city-name">{c.city}</span><span class="city-rev">{c.revenueLabel}</span></div>
+                        <div class="city-track"><div class="city-fill" style={c.style}></div></div>
+                        <div class="city-meta">{c.meta}</div>
+                    </div>
+                </template>
+            </div>
+        </div>
+    </div>
+</template>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>61.0</apiVersion>
+    <formulas>
+        <name>LoyaltyRecordName</name>
+        <dataType>String</dataType>
+        <expression>{!$Record.Name} &amp; &quot; - Loyalty Points&quot;</expression>
+    </formulas>
+    <interviewLabel>Award Loyalty Points {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Award Loyalty Points on Attendance</label>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Loyalty_Points</name>
+        <label>Create Loyalty Points</label>
+        <locationX>176</locationX>
+        <locationY>120</locationY>
+        <inputAssignments>
+            <field>Class_Booking__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Loyalty_Date__c</field>
+            <value>
+                <elementReference>$Flow.CurrentDate</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>LoyaltyRecordName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Points_Earned__c</field>
+            <value>
+                <numberValue>10.0</numberValue>
+            </value>
+        </inputAssignments>
+        <object>Loyalty_Points__c</object>
+    </recordCreates>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Create_Loyalty_Points</targetReference>
+        </connector>
+        <filterFormula>ISCHANGED({!$Record.Status__c}) &amp;&amp; ISPICKVAL({!$Record.Status__c}, &quot;Attended&quot;)</filterFormula>
+        <object>Class_Booking__c</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

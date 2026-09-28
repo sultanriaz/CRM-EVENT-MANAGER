@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Loyalty Points</label>
+    <pluralLabel>Loyalty Points</pluralLabel>
+    <description>Points earned by a member for a specific Class Booking, used for the loyalty/retention program.</description>
+    <nameField>
+        <label>Loyalty Points Name</label>
+        <type>Text</type>
+    </nameField>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <sharingModel>Private</sharingModel>
+    <enableActivities>true</enableActivities>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+</CustomObject>

@@ -1,0 +1,155 @@
+public with sharing class FitnessDashboardController {
+
+    public class DashboardMetrics {
+
+        @AuraEnabled
+        public Decimal totalRevenue;
+
+        @AuraEnabled
+        public Integer activeMembers;
+
+        @AuraEnabled
+        public Decimal attendanceRate;
+
+        @AuraEnabled
+        public Integer totalClasses;
+
+        @AuraEnabled
+        public Integer totalTrainers;
+
+        @AuraEnabled
+        public Integer vipMembers;
+
+        @AuraEnabled
+        public Decimal averageMemberValue;
+
+        @AuraEnabled
+        public Integer todaysBookings;
+    }
+
+
+    @AuraEnabled(cacheable=true)
+    public static DashboardMetrics getDashboardMetrics(){
+
+        DashboardMetrics metrics = new DashboardMetrics();
+
+
+        // Total Revenue
+
+        AggregateResult revenue = [
+            SELECT SUM(Amount__c) total
+            FROM Payment__c
+            WHERE Status__c = 'Completed'
+        ];
+
+        metrics.totalRevenue =
+            revenue.get('total') == null
+            ? 0
+            : (Decimal) revenue.get('total');
+
+
+
+        // Active Members
+
+        metrics.activeMembers = [
+            SELECT COUNT()
+            FROM Contact
+        ];
+
+
+
+        // Total Classes
+
+        metrics.totalClasses = [
+            SELECT COUNT()
+            FROM Class__c
+        ];
+
+
+
+        // Total Trainers
+
+        metrics.totalTrainers = [
+            SELECT COUNT()
+            FROM Trainer__c
+        ];
+
+
+
+        // VIP Members from Loyalty Tier
+
+        AggregateResult vipResult = [
+            SELECT COUNT(Id) total
+            FROM Loyalty_Points__c
+            WHERE Tier__c IN ('Gold','Platinum')
+        ];
+
+        metrics.vipMembers =
+            (Integer) vipResult.get('total');
+
+
+
+        // Average Payment Value
+
+        AggregateResult averagePayment = [
+            SELECT AVG(Amount__c) avgValue
+            FROM Payment__c
+            WHERE Status__c = 'Completed'
+        ];
+
+        metrics.averageMemberValue =
+            averagePayment.get('avgValue') == null
+            ? 0
+            : (Decimal) averagePayment.get('avgValue');
+
+
+
+        // Attendance Rate
+
+        AggregateResult attendance = [
+            SELECT COUNT(Id) totalBookings
+            FROM Class_Booking__c
+        ];
+
+
+        Integer totalBookings =
+            (Integer) attendance.get('totalBookings');
+
+
+        if(totalBookings > 0){
+
+            Integer attendedBookings = [
+                SELECT COUNT()
+                FROM Class_Booking__c
+                WHERE Status__c = 'Attended'
+            ];
+
+
+            metrics.attendanceRate =
+                ((Decimal) attendedBookings /
+                totalBookings) * 100;
+
+        }
+        else {
+
+            metrics.attendanceRate = 0;
+
+        }
+
+
+
+        // Today's Bookings
+
+        metrics.todaysBookings = [
+            SELECT COUNT()
+            FROM Class_Booking__c
+            WHERE CreatedDate = TODAY
+        ];
+
+
+
+        return metrics;
+
+    }
+
+}

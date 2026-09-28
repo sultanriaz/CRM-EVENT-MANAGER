@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Pakistani_Phone_Format</fullName>
+    <active>true</active>
+    <description>Validates that phone numbers follow Pakistani mobile format (03XX-XXXXXXX).</description>
+    <errorConditionFormula>AND(NOT(ISBLANK(Phone)), NOT(REGEX(Phone, "^03[0-9]{2}-[0-9]{7}$")))</errorConditionFormula>
+    <errorDisplayField>Phone</errorDisplayField>
+    <errorMessage>Invalid Pakistani Phone Number. Format must be 03XX-XXXXXXX (e.g., 0321-1234567).</errorMessage>
+</ValidationRule>

@@ -1,0 +1,91 @@
+﻿import { LightningElement, wire } from 'lwc';
+
+import getDashboardMetrics 
+from '@salesforce/apex/FitnessDashboardController.getDashboardMetrics';
+
+
+export default class FitnessHubDashboard extends LightningElement {
+
+    metrics;
+    error;
+
+
+    @wire(getDashboardMetrics)
+    wiredMetrics({data,error}) {
+
+        if(data) {
+            this.metrics = data;
+            this.error = undefined;
+        }
+
+        if(error) {
+            this.error = error;
+            this.metrics = undefined;
+        }
+
+    }
+
+
+    get revenue() {
+
+        return this.metrics
+        ? 'Rs. ' + Number(this.metrics.totalRevenue).toLocaleString()
+        : 'Loading...';
+
+    }
+
+
+    get members() {
+
+        return this.metrics
+        ? this.metrics.activeMembers
+        : 0;
+
+    }
+
+
+    get attendance() {
+
+        return this.metrics
+        ? this.metrics.attendanceRate.toFixed(1) + '%'
+        : '0%';
+
+    }
+
+
+    get classes() {
+
+        return this.metrics
+        ? this.metrics.totalClasses
+        : 0;
+
+    }
+
+
+    get trainers() {
+
+        return this.metrics
+        ? this.metrics.totalTrainers
+        : 0;
+
+    }
+
+
+    get vipMembers() {
+
+        return this.metrics
+        ? this.metrics.vipMembers
+        : 0;
+
+    }
+
+
+    get averageValue() {
+
+        return this.metrics
+        ? 'Rs. ' + Number(this.metrics.averageMemberValue).toLocaleString()
+        : 'Rs. 0';
+
+    }
+
+}

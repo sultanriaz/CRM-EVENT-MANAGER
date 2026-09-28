@@ -1,0 +1,63 @@
+﻿<template>
+
+<div class="dashboard">
+
+
+<div class="header">
+    <h1>Fitness Hub Command Center</h1>
+    <p>Live Franchise Intelligence Platform</p>
+</div>
+
+
+
+<div class="grid">
+
+
+<div class="card">
+<h2>Total Revenue</h2>
+<h1>{revenue}</h1>
+</div>
+
+
+<div class="card">
+<h2>Active Members</h2>
+<h1>{members}</h1>
+</div>
+
+
+<div class="card">
+<h2>Attendance Rate</h2>
+<h1>{attendance}</h1>
+</div>
+
+
+<div class="card">
+<h2>Total Classes</h2>
+<h1>{classes}</h1>
+</div>
+
+
+<div class="card">
+<h2>Professional Trainers</h2>
+<h1>{trainers}</h1>
+</div>
+
+
+<div class="card">
+<h2>VIP Members</h2>
+<h1>{vipMembers}</h1>
+</div>
+
+
+<div class="card">
+<h2>Average Member Value</h2>
+<h1>{averageValue}</h1>
+</div>
+
+
+</div>
+
+
+</div>
+
+</template>

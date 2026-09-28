@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Specialty__c</fullName>
+    <label>Specialty</label>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value><fullName>Yoga</fullName><default>false</default><label>Yoga</label></value>
+            <value><fullName>Pilates</fullName><default>false</default><label>Pilates</label></value>
+            <value><fullName>Cardio</fullName><default>false</default><label>Cardio</label></value>
+            <value><fullName>Strength Training</fullName><default>false</default><label>Strength Training</label></value>
+            <value><fullName>Zumba</fullName><default>false</default><label>Zumba</label></value>
+            <value><fullName>CrossFit</fullName><default>false</default><label>CrossFit</label></value>
+            <value><fullName>Spin</fullName><default>false</default><label>Spin</label></value>
+            <value><fullName>Other</fullName><default>false</default><label>Other</label></value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
