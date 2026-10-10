@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <content>Campus_Events_Home</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>standard-home</pageOrSobjectType>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>Campus_Event_Record_Page</content>
+        <formFactor>Large</formFactor>
+        <pageOrSobjectType>Event__c</pageOrSobjectType>
+        <type>Flexipage</type>
+    </actionOverrides>
+    <description>Tracks societies, events and student registrations for CUI Sahiwal.</description>
+    <formFactors>Large</formFactors>
+    <label>Campus Events Manager</label>
+    <navType>Console</navType>
+    <tabs>standard-home</tabs>
+    <tabs>Enterprise_Societies</tabs>
+    <tabs>Enterprise_Events</tabs>
+    <tabs>Enterprise_Registrations</tabs>
+    <tabs>Enterprise_Contacts</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Campus_Events_Workspace_Utility</utilityBar>
+</CustomApplication>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Recreational_Event</fullName>
+    <active>true</active>
+    <label>Recreational Event</label>
+    <picklistValues>
+        <picklist>Session_Type__c</picklist>
+        <values><fullName>Match</fullName><default>false</default></values>
+        <values><fullName>Tournament</fullName><default>false</default></values>
+        <values><fullName>Concert</fullName><default>false</default></values>
+        <values><fullName>Live Stream</fullName><default>false</default></values>
+        <values><fullName>Webinar</fullName><default>false</default></values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Venue__c</picklist>
+        <values><fullName>Sports Complex</fullName><default>false</default></values>
+        <values><fullName>Auditorium</fullName><default>false</default></values>
+        <values><fullName>Online</fullName><default>false</default></values>
+    </picklistValues>
+</RecordType>

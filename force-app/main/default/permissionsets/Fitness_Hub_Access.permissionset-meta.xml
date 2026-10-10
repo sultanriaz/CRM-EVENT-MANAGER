@@ -1,5 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+        <classAccesses>
+        <apexClass>FitnessDashboardController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>FitnessInsightsController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
+        <apexClass>EnterpriseWorkspaceController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
     <fieldPermissions>
         <editable>true</editable>
         <field>Trainer__c.Biography__c</field>
@@ -157,4 +169,39 @@
         <object>Loyalty_Points__c</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
+    <tabSettings>
+        <tab>Trainer__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Class__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Class_Booking__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Payment__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Loyalty_Points__c</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
+        <tab>Enterprise_Contacts</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings><tab>Enterprise_Classes</tab><visibility>Visible</visibility></tabSettings>
+    <tabSettings><tab>Enterprise_Trainers</tab><visibility>Visible</visibility></tabSettings>
+    <tabSettings><tab>Enterprise_Class_Bookings</tab><visibility>Visible</visibility></tabSettings>
+    <tabSettings><tab>Enterprise_Payments</tab><visibility>Visible</visibility></tabSettings>
+    <tabSettings><tab>Enterprise_Loyalty</tab><visibility>Visible</visibility></tabSettings>
+    <tabSettings><tab>Enterprise_Lab_Students</tab><visibility>Visible</visibility></tabSettings>
+    <tabSettings><tab>Enterprise_Lab_Classes</tab><visibility>Visible</visibility></tabSettings>
+    <applicationVisibilities>
+        <application>Community_Fitness_Wellness_Hub</application>
+        <visible>true</visible>
+    </applicationVisibilities>
 </PermissionSet>

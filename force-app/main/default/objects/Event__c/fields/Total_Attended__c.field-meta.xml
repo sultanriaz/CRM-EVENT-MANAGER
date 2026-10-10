@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Total_Attended__c</fullName>
+    <label>Total Attended</label>
+    <type>Summary</type>
+    <summarizedField>Registration__c.Attended__c</summarizedField>
+    <summaryForeignKey>Registration__c.Event__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <summaryFilterItems>
+        <field>Registration__c.Attended__c</field>
+        <operation>equals</operation>
+        <value>true</value>
+    </summaryFilterItems>
+</CustomField>

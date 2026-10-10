@@ -1,0 +1,42 @@
+<template>
+    <div class="panel-grid">
+        <div class="glass-card">
+            <h3>Member Retention | 30 Days</h3>
+            <div class="ring-wrap">
+                <svg class="ring" viewBox="0 0 120 120">
+                    <circle class="ring-bg" cx="60" cy="60" r="45"></circle>
+                    <circle class="ring-fg" cx="60" cy="60" r="45" stroke-dasharray={ringDash} transform="rotate(-90 60 60)"></circle>
+                    <text x="60" y="67" text-anchor="middle" class="ring-text">{retentionPct}%</text>
+                </svg>
+                <div class="ring-stats">
+                    <div><strong>{retained}</strong> of <strong>{priorActive}</strong> members returned</div>
+                    <div class="risk"><strong>{atRisk}</strong> at risk of churning</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="glass-card">
+            <h3>Top Trainers</h3>
+            <template for:each={trainers} for:item="t">
+                <div key={t.key} class="trainer-row">
+                    <div class="trainer-head"><span class="trainer-name">{t.name}</span><span class="trainer-count">{t.attended} sessions</span></div>
+                    <div class="trainer-track"><div class="trainer-fill" style={t.style}></div></div>
+                    <div class="trainer-meta">{t.rate}</div>
+                </div>
+            </template>
+        </div>
+
+        <div class="glass-card insights-card">
+            <h3>Smart Insights</h3>
+            <template if:false={hasInsights}>
+                <div class="empty">Analysing your data...</div>
+            </template>
+            <template for:each={insights} for:item="i">
+                <div key={i.key} class={i.cls}>
+                    <div class="insight-title">{i.title}</div>
+                    <div class="insight-detail">{i.detail}</div>
+                </div>
+            </template>
+        </div>
+    </div>
+</template>

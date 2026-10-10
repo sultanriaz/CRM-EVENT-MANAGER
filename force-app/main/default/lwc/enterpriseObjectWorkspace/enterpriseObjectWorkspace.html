@@ -1,0 +1,72 @@
+<template>
+    <main class={shellClass}>
+        <section class="hero" aria-labelledby="workspace-title">
+            <div class="hero-copy">
+                <lightning-icon icon-name={iconName} size="medium" alternative-text=""></lightning-icon>
+                <div>
+                    <p class="eyebrow">Enterprise workspace</p>
+                    <h1 id="workspace-title">{title}</h1>
+                    <p class="subtitle">{subtitle}</p>
+                </div>
+            </div>
+            <div class="hero-actions">
+                <lightning-button-icon icon-name={themeIcon} alternative-text={themeLabel} title={themeLabel} onclick={toggleTheme}></lightning-button-icon>
+                <lightning-button-icon icon-name="utility:refresh" alternative-text="Refresh records" title="Refresh records" onclick={handleRefresh} disabled={loading}></lightning-button-icon>
+                <template lwc:if={canCreate}>
+                    <lightning-button variant="brand" label="New" icon-name="utility:add" onclick={handleNew}></lightning-button>
+                </template>
+            </div>
+        </section>
+
+        <section class="toolbar" aria-label="Record search and filters">
+            <div class="search-control">
+                <lightning-input type="search" label="Search by name" value={draftSearch} onchange={handleSearchInput}></lightning-input>
+            </div>
+            <div class="search-button"><lightning-button label="Search" variant="brand-outline" onclick={handleSearch}></lightning-button></div>
+            <template lwc:if={hasFilter}>
+                <div class="filter-control">
+                    <lightning-combobox label={filterLabel} value={filterValue} options={filterOptions} onchange={handleFilter}></lightning-combobox>
+                </div>
+            </template>
+            <div class="page-size-control">
+                <lightning-combobox label="Page size" value={pageSizeValue} options={pageSizeOptions} onchange={handlePageSize}></lightning-combobox>
+            </div>
+            <div class="clear-button"><lightning-button label="Reset" onclick={handleClear}></lightning-button></div>
+        </section>
+
+        <section class="data-panel" aria-live="polite">
+            <div class="panel-heading">
+                <div><h2>{title}</h2><p>{recordSummary}</p></div>
+                <p class="page-summary">{pageSummary}</p>
+            </div>
+
+            <template lwc:if={loading}>
+                <div class="state"><lightning-spinner alternative-text="Loading records" size="medium"></lightning-spinner><p>Loading current Salesforce data…</p></div>
+            </template>
+            <template lwc:elseif={errorMessage}>
+                <div class="state error-state" role="alert">
+                    <lightning-icon icon-name="utility:error" variant="error" size="small" alternative-text="Error"></lightning-icon>
+                    <div><h3>Records unavailable</h3><p>{errorMessage}</p><lightning-button label="Try again" onclick={handleRefresh}></lightning-button></div>
+                </div>
+            </template>
+            <template lwc:elseif={showTable}>
+                <div class="table-wrap">
+                    <lightning-datatable key-field="Id" data={rows} columns={columns} hide-checkbox-column show-row-number-column
+                        sorted-by={sortedByKey} sorted-direction={sortDirection} onsort={handleSort} onrowaction={handleRowAction}>
+                    </lightning-datatable>
+                </div>
+                <nav class="pagination" aria-label="Record pages">
+                    <lightning-button label="Previous" icon-name="utility:chevronleft" onclick={handlePrevious} disabled={disablePrevious}></lightning-button>
+                    <span>{pageSummary}</span>
+                    <lightning-button label="Next" icon-name="utility:chevronright" icon-position="right" onclick={handleNext} disabled={disableNext}></lightning-button>
+                </nav>
+            </template>
+            <template lwc:elseif={showEmpty}>
+                <div class="state empty-state">
+                    <lightning-icon icon-name="utility:search" size="medium" alternative-text="No records"></lightning-icon>
+                    <div><h3>No matching records</h3><p>Adjust the search or filter, or create a record if you have access.</p><lightning-button label="Reset filters" onclick={handleClear}></lightning-button></div>
+                </div>
+            </template>
+        </section>
+    </main>
+</template>

@@ -1,0 +1,82 @@
+﻿task,requirement,local,org,metadata_type,metadata_member,path,note,org_active
+1,Lightning app with Console navigation and six tabs,PRESENT,UNVERIFIED,CustomApplication,Campus_Events_Manager,applications/Campus_Events_Manager.app-meta.xml,,N/A
+1,Custom object Society__c,PRESENT,UNVERIFIED,CustomObject,Society__c,objects/Society__c/Society__c.object-meta.xml,,N/A
+1,Custom tab Society__c,PRESENT,UNVERIFIED,CustomTab,Society__c,tabs/Society__c.tab-meta.xml,,N/A
+1,Custom object Event__c,PRESENT,UNVERIFIED,CustomObject,Event__c,objects/Event__c/Event__c.object-meta.xml,,N/A
+1,Custom tab Event__c,PRESENT,UNVERIFIED,CustomTab,Event__c,tabs/Event__c.tab-meta.xml,,N/A
+1,Custom object Registration__c,PRESENT,UNVERIFIED,CustomObject,Registration__c,objects/Registration__c/Registration__c.object-meta.xml,,N/A
+1,Custom tab Registration__c,PRESENT,UNVERIFIED,CustomTab,Registration__c,tabs/Registration__c.tab-meta.xml,,N/A
+1,Society__c.Faculty_Advisor_Email__c,PRESENT,UNVERIFIED,CustomField,Society__c.Faculty_Advisor_Email__c,objects/Society__c/fields/Faculty_Advisor_Email__c.field-meta.xml,,N/A
+1,Society__c.Founded_Date__c,PRESENT,UNVERIFIED,CustomField,Society__c.Founded_Date__c,objects/Society__c/fields/Founded_Date__c.field-meta.xml,,N/A
+1,Society__c.Category__c,PRESENT,UNVERIFIED,CustomField,Society__c.Category__c,objects/Society__c/fields/Category__c.field-meta.xml,,N/A
+1,Society__c.Active__c,PRESENT,UNVERIFIED,CustomField,Society__c.Active__c,objects/Society__c/fields/Active__c.field-meta.xml,,N/A
+1,Society__c.Website__c,PRESENT,UNVERIFIED,CustomField,Society__c.Website__c,objects/Society__c/fields/Website__c.field-meta.xml,,N/A
+1,Event__c.Start_Date_Time__c,PRESENT,UNVERIFIED,CustomField,Event__c.Start_Date_Time__c,objects/Event__c/fields/Start_Date_Time__c.field-meta.xml,,N/A
+1,Event__c.End_Date_Time__c,PRESENT,UNVERIFIED,CustomField,Event__c.End_Date_Time__c,objects/Event__c/fields/End_Date_Time__c.field-meta.xml,,N/A
+1,Event__c.Venue__c,PRESENT,UNVERIFIED,CustomField,Event__c.Venue__c,objects/Event__c/fields/Venue__c.field-meta.xml,,N/A
+1,Event__c.Capacity__c,PRESENT,UNVERIFIED,CustomField,Event__c.Capacity__c,objects/Event__c/fields/Capacity__c.field-meta.xml,,N/A
+1,Event__c.Ticket_Price__c,PRESENT,UNVERIFIED,CustomField,Event__c.Ticket_Price__c,objects/Event__c/fields/Ticket_Price__c.field-meta.xml,,N/A
+1,Event__c.Status__c,PRESENT,UNVERIFIED,CustomField,Event__c.Status__c,objects/Event__c/fields/Status__c.field-meta.xml,,N/A
+1,Event__c.Description__c,PRESENT,UNVERIFIED,CustomField,Event__c.Description__c,objects/Event__c/fields/Description__c.field-meta.xml,,N/A
+1,Registration__c.Student_Department__c,PRESENT,UNVERIFIED,CustomField,Registration__c.Student_Department__c,objects/Registration__c/fields/Student_Department__c.field-meta.xml,,N/A
+1,Registration__c.Registration_Date__c,PRESENT,UNVERIFIED,CustomField,Registration__c.Registration_Date__c,objects/Registration__c/fields/Registration_Date__c.field-meta.xml,,N/A
+1,Registration__c.Attended__c,PRESENT,UNVERIFIED,CustomField,Registration__c.Attended__c,objects/Registration__c/fields/Attended__c.field-meta.xml,,N/A
+1,Registration__c.Skills_of_Interest__c,PRESENT,UNVERIFIED,CustomField,Registration__c.Skills_of_Interest__c,objects/Registration__c/fields/Skills_of_Interest__c.field-meta.xml,,N/A
+1,Global value set Campus_Departments,PRESENT,UNVERIFIED,GlobalValueSet,Campus_Departments,globalValueSets/Campus_Departments.globalValueSet-meta.xml,,N/A
+1,Student Department uses global value set,PRESENT,UNVERIFIED,CustomField,Registration__c.Student_Department__c,objects/Registration__c/fields/Student_Department__c.field-meta.xml,,N/A
+1,Dependent Session Type controlled by Venue,PRESENT,UNVERIFIED,CustomField,Event__c.Session_Type__c,objects/Event__c/fields/Session_Type__c.field-meta.xml,,N/A
+1,Event to Society Lookup,PRESENT,UNVERIFIED,CustomField,Event__c.Society__c,objects/Event__c/fields/Society__c.field-meta.xml,,N/A
+1,Registration to Event Master-Detail,PRESENT,UNVERIFIED,CustomField,Registration__c.Event__c,objects/Registration__c/fields/Event__c.field-meta.xml,,N/A
+1,Registration to Contact Lookup,PRESENT,UNVERIFIED,CustomField,Registration__c.Student__c,objects/Registration__c/fields/Student__c.field-meta.xml,,N/A
+1,Event Total_Registrations__c rollup,PRESENT,UNVERIFIED,CustomField,Event__c.Total_Registrations__c,objects/Event__c/fields/Total_Registrations__c.field-meta.xml,,N/A
+1,Event Total_Attended__c rollup,PRESENT,UNVERIFIED,CustomField,Event__c.Total_Attended__c,objects/Event__c/fields/Total_Attended__c.field-meta.xml,,N/A
+1,Event layout Details / Schedule / Capacity sections,MISSING,UNVERIFIED,Layout,Event__c-Event Layout,layouts/Event__c-Event Layout.layout-meta.xml,"Must include Registrations related list with Student, Department and Attended columns; layout name may differ.",N/A
+1,Upcoming Open Events list view,PRESENT,UNVERIFIED,ListView,Event__c.Upcoming_Open_Events,objects/Event__c/listViews/Upcoming_Open_Events.listView-meta.xml,,N/A
+1,My Society's Events properly scoped,PARTIAL,UNVERIFIED,ListView,Event__c.My_Societys_Events,objects/Event__c/listViews/My_Societys_Events.listView-meta.xml,Current owner-only Mine filter does not establish same-society filtering; check intended access model.,N/A
+2,Event formula Seats_Remaining__c,PRESENT,UNVERIFIED,CustomField,Event__c.Seats_Remaining__c,objects/Event__c/fields/Seats_Remaining__c.field-meta.xml,,N/A
+2,Event formula Event_Duration_Hours__c,PRESENT,UNVERIFIED,CustomField,Event__c.Event_Duration_Hours__c,objects/Event__c/fields/Event_Duration_Hours__c.field-meta.xml,,N/A
+2,Event formula Fill_Status__c,PRESENT,UNVERIFIED,CustomField,Event__c.Fill_Status__c,objects/Event__c/fields/Fill_Status__c.field-meta.xml,,N/A
+2,Active validation rule End_After_Start,PRESENT,UNVERIFIED,ValidationRule,Event__c.End_After_Start,objects/Event__c/validationRules/End_After_Start.validationRule-meta.xml,,N/A
+2,Active validation rule Capacity_Range,PRESENT,UNVERIFIED,ValidationRule,Event__c.Capacity_Range,objects/Event__c/validationRules/Capacity_Range.validationRule-meta.xml,,N/A
+2,Active validation rule Ticket_Price_Required,PRESENT,UNVERIFIED,ValidationRule,Event__c.Ticket_Price_Required,objects/Event__c/validationRules/Ticket_Price_Required.validationRule-meta.xml,,N/A
+2,Active validation rule Event_Must_Be_Open,PRESENT,UNVERIFIED,ValidationRule,Registration__c.Event_Must_Be_Open,objects/Registration__c/validationRules/Event_Must_Be_Open.validationRule-meta.xml,,N/A
+2,Active validation rule Advisor_Email_Domain,PRESENT,UNVERIFIED,ValidationRule,Society__c.Advisor_Email_Domain,objects/Society__c/validationRules/Advisor_Email_Domain.validationRule-meta.xml,,N/A
+2,Contact email matching rule,PRESENT,UNVERIFIED,MatchingRules,Contact,matchingRules/Contact.matchingRule-meta.xml,,N/A
+2,Contact First + Last + Phone matching rule,PARTIAL,UNVERIFIED,MatchingRules,Contact,matchingRules/Contact.matchingRule-meta.xml,,N/A
+2,Contact duplicate rule blocks identical email,MISSING,UNVERIFIED,DuplicateRule,Contact.Email_Block,duplicateRules/Contact.Email_Block.duplicateRule-meta.xml,Check actual rule name in org; matching rules alone do not block duplicates.,N/A
+2,Contact duplicate rule warns name + phone,MISSING,UNVERIFIED,DuplicateRule,Contact.Name_Phone_Warn,duplicateRules/Contact.Name_Phone_Warn.duplicateRule-meta.xml,Rule name may differ; needs allow-with-alert behavior.,N/A
+2,Lightning registration email template,PARTIAL,UNVERIFIED,EmailTemplate,unfiled$public/Event_Registration_Confirmation,email/unfiled$public/Event_Registration_Confirmation.email-meta.xml,Present template is legacy Aloha/text; inspect Lightning Email Template requirement and merge fields.,N/A
+2,Registration email alert,PRESENT,UNVERIFIED,Workflow,Registration__c,workflows/Registration__c.workflow-meta.xml,,N/A
+3,Event record type Academic_Event,PRESENT,UNVERIFIED,RecordType,Event__c.Academic_Event,objects/Event__c/recordTypes/Academic_Event.recordType-meta.xml,,N/A
+3,Event record type Recreational_Event,PRESENT,UNVERIFIED,RecordType,Event__c.Recreational_Event,objects/Event__c/recordTypes/Recreational_Event.recordType-meta.xml,,N/A
+3,Academic Event dedicated layout,MISSING,UNVERIFIED,Layout,Event__c-Academic Event Layout,layouts/Event__c-Academic Event Layout.layout-meta.xml,Check profile record-type layout assignments; names can differ.,N/A
+3,Recreational Event dedicated layout,MISSING,UNVERIFIED,Layout,Event__c-Recreational Event Layout,layouts/Event__c-Recreational Event Layout.layout-meta.xml,Check profile record-type layout assignments; names can differ.,N/A
+3,Event feed tracking enabled,PRESENT,UNVERIFIED,CustomObject,Event__c,objects/Event__c/Event__c.object-meta.xml,,N/A
+3,Event Status__c feed tracking,PRESENT,UNVERIFIED,CustomField,Event__c.Status__c,objects/Event__c/fields/Status__c.field-meta.xml,,N/A
+3,Event Capacity__c feed tracking,PRESENT,UNVERIFIED,CustomField,Event__c.Capacity__c,objects/Event__c/fields/Capacity__c.field-meta.xml,,N/A
+3,Registration Attended field history,PRESENT,UNVERIFIED,CustomField,Registration__c.Attended__c,objects/Registration__c/fields/Attended__c.field-meta.xml,,N/A
+3,Permission set Campus_Events_Admin,PRESENT,UNVERIFIED,PermissionSet,Campus_Events_Admin,permissionsets/Campus_Events_Admin.permissionset-meta.xml,,N/A
+3,Permission set Society_President,PRESENT,UNVERIFIED,PermissionSet,Society_President,permissionsets/Society_President.permissionset-meta.xml,,N/A
+3,Permission set Volunteer,PRESENT,UNVERIFIED,PermissionSet,Volunteer,permissionsets/Volunteer.permissionset-meta.xml,,N/A
+3,Role Student_Affairs_Officer,PRESENT,UNVERIFIED,Role,Student_Affairs_Officer,roles/Student_Affairs_Officer.role-meta.xml,,N/A
+3,Role Society_President,PRESENT,UNVERIFIED,Role,Society_President,roles/Society_President.role-meta.xml,,N/A
+3,Role Volunteer,PRESENT,UNVERIFIED,Role,Volunteer,roles/Volunteer.role-meta.xml,,N/A
+3,Society OWD Public Read Only,PRESENT,UNVERIFIED,CustomObject,Society__c,objects/Society__c/Society__c.object-meta.xml,,N/A
+3,Event OWD Private,PRESENT,UNVERIFIED,CustomObject,Event__c,objects/Event__c/Event__c.object-meta.xml,,N/A
+3,Volunteer read sharing of Open Events,PRESENT,UNVERIFIED,SharingRules,Event__c,sharingRules/Event__c.sharingRules-meta.xml,,N/A
+4,Report type outer join includes events with zero registrations,PRESENT,UNVERIFIED,ReportType,Events_with_Registrations,reportTypes/Events_with_Registrations.reportType-meta.xml,,N/A
+4,Report Registrations_by_Department,PRESENT,UNVERIFIED,Report,Campus_Events/Registrations_by_Department,reports/Campus_Events/Registrations_by_Department.report-meta.xml,,N/A
+4,Report Event_Attendance_Rate,PARTIAL,UNVERIFIED,Report,Campus_Events/Event_Attendance_Rate,reports/Campus_Events/Event_Attendance_Rate.report-meta.xml,,N/A
+4,Report Society_vs_Event_Status,PRESENT,UNVERIFIED,Report,Campus_Events/Society_vs_Event_Status,reports/Campus_Events/Society_vs_Event_Status.report-meta.xml,,N/A
+4,Report Upcoming_Events_This_Month,PRESENT,UNVERIFIED,Report,Campus_Events/Upcoming_Events_This_Month,reports/Campus_Events/Upcoming_Events_This_Month.report-meta.xml,,N/A
+4,"Student Affairs Dashboard (gauge, donut, bar, table; filter)",MISSING,UNVERIFIED,Dashboard,Campus_Events/Student_Affairs_Dashboard,dashboards/Campus_Events/Student_Affairs_Dashboard.dashboard-meta.xml,"Verify four correct component types, dashboard filter and running user; file/name may differ.",N/A
+5,Flow Quick_Event_Registration,MISSING,UNVERIFIED,Flow,Quick_Event_Registration,flows/Quick_Event_Registration.flow-meta.xml,"Need active flow, correct trigger/timing/logic, fault paths and debug evidence.",UNVERIFIED
+5,Flow Registration_After_Save,MISSING,UNVERIFIED,Flow,Registration_After_Save,flows/Registration_After_Save.flow-meta.xml,"Need active flow, correct trigger/timing/logic, fault paths and debug evidence.",UNVERIFIED
+5,Flow Registration_Before_Save,MISSING,UNVERIFIED,Flow,Registration_Before_Save,flows/Registration_Before_Save.flow-meta.xml,"Need active flow, correct trigger/timing/logic, fault paths and debug evidence.",UNVERIFIED
+5,Flow Daily_Event_Closer,MISSING,UNVERIFIED,Flow,Daily_Event_Closer,flows/Daily_Event_Closer.flow-meta.xml,"Need active flow, correct trigger/timing/logic, fault paths and debug evidence.",UNVERIFIED
+5,Flow Calculate_Society_Stats,MISSING,UNVERIFIED,Flow,Calculate_Society_Stats,flows/Calculate_Society_Stats.flow-meta.xml,"Need active flow, correct trigger/timing/logic, fault paths and debug evidence.",UNVERIFIED
+5,Flow Venue_Emergency_Handler,MISSING,UNVERIFIED,Flow,Venue_Emergency_Handler,flows/Venue_Emergency_Handler.flow-meta.xml,"Need active flow, correct trigger/timing/logic, fault paths and debug evidence.",UNVERIFIED
+5,Platform event Venue_Alert__e,PRESENT,UNVERIFIED,CustomObject,Venue_Alert__e,objects/Venue_Alert__e/Venue_Alert__e.object-meta.xml,,N/A
+5,Platform alert field Venue__c,PRESENT,UNVERIFIED,CustomField,Venue_Alert__e.Venue__c,objects/Venue_Alert__e/fields/Venue__c.field-meta.xml,,N/A
+5,Platform alert field Message__c,PRESENT,UNVERIFIED,CustomField,Venue_Alert__e.Message__c,objects/Venue_Alert__e/fields/Message__c.field-meta.xml,,N/A
+6,Written assignment answers and screenshot evidence,MISSING,UNVERIFIED,,,docs/campus-events-assignment-report.md,"Five short answers + navigation, rollup and security explanations + proof screenshots; filename is illustrative.",N/A

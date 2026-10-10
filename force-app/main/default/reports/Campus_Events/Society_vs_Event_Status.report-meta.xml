@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+  <columns>
+    <field>Event__c$Name</field>
+  </columns>
+  <columns>
+    <field>Event__c$Society_Category__c</field>
+  </columns>
+  <format>Matrix</format>
+  <groupingsAcross>
+    <dateGranularity>Day</dateGranularity>
+    <field>Event__c$Status__c</field>
+    <sortOrder>Asc</sortOrder>
+  </groupingsAcross>
+  <groupingsDown>
+    <dateGranularity>Day</dateGranularity>
+    <field>Event__c$Society__c</field>
+    <sortOrder>Asc</sortOrder>
+  </groupingsDown>
+  <name>Society vs Event Status</name>
+  <params>
+    <name>co</name>
+    <value>1</value>
+  </params>
+  <reportType>Events_with_Registrations__c</reportType>
+  <scope>user</scope>
+  <showDetails>true</showDetails>
+  <showGrandTotal>true</showGrandTotal>
+  <showSubTotals>true</showSubTotals>
+  <timeFrameFilter>
+    <dateColumn>Event__c$Start_Date_Time__c</dateColumn>
+    <interval>INTERVAL_CURRENT</interval>
+  </timeFrameFilter>
+</Report>

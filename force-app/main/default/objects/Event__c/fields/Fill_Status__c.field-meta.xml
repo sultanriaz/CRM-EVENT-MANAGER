@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fill_Status__c</fullName>
+    <label>Fill Status</label>
+    <type>Text</type>
+    <formula>IF(Seats_Remaining__c &lt;= 0, "Full", IF(Seats_Remaining__c &lt; Capacity__c * 0.1, "Almost Full", "Available"))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+</CustomField>

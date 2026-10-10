@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Advisor_Email_Domain</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(ISBLANK(Faculty_Advisor_Email__c)), LOWER(RIGHT(Faculty_Advisor_Email__c, 18)) &lt;&gt; "@cuisahiwal.edu.pk")</errorConditionFormula>
+    <errorDisplayField>Faculty_Advisor_Email__c</errorDisplayField>
+    <errorMessage>Faculty Advisor Email must end with @cuisahiwal.edu.pk.</errorMessage>
+</ValidationRule>

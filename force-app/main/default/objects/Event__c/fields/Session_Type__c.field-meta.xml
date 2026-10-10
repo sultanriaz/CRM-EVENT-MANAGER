@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Session_Type__c</fullName>
+    <label>Session Type</label>
+    <type>Picklist</type>
+    <trackTrending>false</trackTrending>
+    <valueSet>
+        <controllingField>Venue__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value><fullName>Webinar</fullName><default>false</default><label>Webinar</label></value>
+            <value><fullName>Live Stream</fullName><default>false</default><label>Live Stream</label></value>
+            <value><fullName>Match</fullName><default>false</default><label>Match</label></value>
+            <value><fullName>Tournament</fullName><default>false</default><label>Tournament</label></value>
+            <value><fullName>Seminar</fullName><default>false</default><label>Seminar</label></value>
+            <value><fullName>Talk</fullName><default>false</default><label>Talk</label></value>
+            <value><fullName>Concert</fullName><default>false</default><label>Concert</label></value>
+            <value><fullName>Workshop</fullName><default>false</default><label>Workshop</label></value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Online</controllingFieldValue>
+            <valueName>Webinar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Online</controllingFieldValue>
+            <valueName>Live Stream</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sports Complex</controllingFieldValue>
+            <valueName>Match</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Sports Complex</controllingFieldValue>
+            <valueName>Tournament</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Auditorium</controllingFieldValue>
+            <controllingFieldValue>Seminar Hall</controllingFieldValue>
+            <valueName>Seminar</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Auditorium</controllingFieldValue>
+            <valueName>Talk</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Auditorium</controllingFieldValue>
+            <valueName>Concert</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Seminar Hall</controllingFieldValue>
+            <controllingFieldValue>Lab Block</controllingFieldValue>
+            <valueName>Workshop</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

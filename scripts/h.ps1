@@ -1,0 +1,10 @@
+$utf8 = New-Object System.Text.UTF8Encoding($false)
+$root = "$PWD\force-app\main\default"
+$ns = 'xmlns="http://soap.sforce.com/2006/04/metadata"'
+function W($p,$c){ New-Item -ItemType Directory -Force (Split-Path $p) | Out-Null; [System.IO.File]::WriteAllText($p,$c,$utf8) }
+function Vals($l){ ($l | ForEach-Object { "            <value><fullName>$_</fullName><default>false</default><label>$_</label></value>" }) -join "`n" }
+function Field($o,$n,$b){ W "$root\objects\$o\fields\$n.field-meta.xml" "<?xml version=`"1.0`" encoding=`"UTF-8`"?>`n<CustomField $ns>`n    <fullName>$n</fullName>`n$b`n</CustomField>`n" }
+function Simple($o,$n,$label,$type,$x=''){ Field $o $n "    <label>$label</label>`n    <type>$type</type>`n    <trackTrending>false</trackTrending>$x" }
+function Pick($o,$n,$label,$l,$type='Picklist',$x=''){ $v = if($type -eq 'MultiselectPicklist'){"`n    <visibleLines>5</visibleLines>"}else{''}; Field $o $n "    <label>$label</label>`n    <type>$type</type>`n    <trackTrending>false</trackTrending>$v$x`n    <valueSet>`n        <restricted>true</restricted>`n        <valueSetDefinition>`n            <sorted>false</sorted>`n$(Vals $l)`n        </valueSetDefinition>`n    </valueSet>" }
+function Obj($o,$label,$plural,$name,$sharing,$x=''){ W "$root\objects\$o\$o.object-meta.xml" "<?xml version=`"1.0`" encoding=`"UTF-8`"?>`n<CustomObject $ns>`n    <deploymentStatus>Deployed</deploymentStatus>`n    <enableReports>true</enableReports>`n    <enableSearch>true</enableSearch>$x`n    <label>$label</label>`n    <pluralLabel>$plural</pluralLabel>`n    <nameField>$name</nameField>`n    <sharingModel>$sharing</sharingModel>`n</CustomObject>`n" }
+function VR($o,$n,$f,$fld,$msg){ W "$root\objects\$o\validationRules\$n.validationRule-meta.xml" "<?xml version=`"1.0`" encoding=`"UTF-8`"?>`n<ValidationRule $ns>`n    <fullName>$n</fullName>`n    <active>true</active>`n    <errorConditionFormula>$f</errorConditionFormula>`n    <errorDisplayField>$fld</errorDisplayField>`n    <errorMessage>$msg</errorMessage>`n</ValidationRule>`n" }

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>CampusEventRegisterAction</members><members>CampusEventRegisterActionTest</members>
+        <members>CampusEventsDashboardController</members><members>CampusEventsDashboardControllerTest</members>
+        <members>CampusSocietyStatsAction</members><members>CampusVenueEmergencyAction</members>
+        <members>CampusAutomationActionsTest</members>
+        <members>EnterpriseWorkspaceController</members><members>EnterpriseWorkspaceControllerTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types><members>Campus_Events_Manager</members><members>Community_Fitness_Wellness_Hub</members><name>CustomApplication</name></types>
+    <types><members>Society__c</members><members>Event__c</members><members>Registration__c</members><members>Venue_Alert__e</members><members>Class__c</members><members>Trainer__c</members><members>Class_Booking__c</members><members>Payment__c</members><members>Loyalty_Points__c</members><members>Lab_Student__c</members><members>Lab_Class__c</members><name>CustomObject</name></types>
+    <types>
+        <members>Society__c.Active__c</members><members>Society__c.Category__c</members><members>Society__c.Completed_Events__c</members><members>Society__c.Faculty_Advisor_Email__c</members><members>Society__c.Founded_Date__c</members><members>Society__c.Total_Attendees__c</members><members>Society__c.Website__c</members>
+        <members>Event__c.Capacity__c</members><members>Event__c.Description__c</members><members>Event__c.End_Date_Time__c</members><members>Event__c.Event_Duration_Hours__c</members><members>Event__c.Fill_Status__c</members><members>Event__c.Seats_Remaining__c</members><members>Event__c.Session_Type__c</members><members>Event__c.Society__c</members><members>Event__c.Society_Category__c</members><members>Event__c.Start_Date_Time__c</members><members>Event__c.Status__c</members><members>Event__c.Ticket_Price__c</members><members>Event__c.Total_Attended__c</members><members>Event__c.Total_Registrations__c</members><members>Event__c.Venue__c</members>
+        <members>Registration__c.Attended__c</members><members>Registration__c.Event__c</members><members>Registration__c.Registration_Date__c</members><members>Registration__c.Skills_of_Interest__c</members><members>Registration__c.Student__c</members><members>Registration__c.Student_Department__c</members>
+        <members>Venue_Alert__e.Message__c</members><members>Venue_Alert__e.Venue__c</members><name>CustomField</name>
+    </types>
+    <types><members>Campus_Departments</members><name>GlobalValueSet</name></types>
+    <types><members>Event__c.Academic_Event</members><members>Event__c.Recreational_Event</members><name>RecordType</name></types>
+    <types><members>Event__c.Upcoming_Open_Events</members><members>Event__c.My_Societys_Events</members><name>ListView</name></types>
+    <types><members>Event__c.End_After_Start</members><members>Event__c.Capacity_Range</members><members>Event__c.Ticket_Price_Required</members><members>Registration__c.Event_Must_Be_Open</members><members>Registration__c.No_Overbooked_Or_Closed_Event</members><members>Society__c.Advisor_Email_Domain</members><name>ValidationRule</name></types>
+    <types><members>Society__c</members><members>Event__c</members><members>Registration__c</members><members>Enterprise_Contacts</members><members>Enterprise_Societies</members><members>Enterprise_Events</members><members>Enterprise_Registrations</members><members>Enterprise_Classes</members><members>Enterprise_Trainers</members><members>Enterprise_Class_Bookings</members><members>Enterprise_Payments</members><members>Enterprise_Loyalty</members><members>Enterprise_Lab_Students</members><members>Enterprise_Lab_Classes</members><name>CustomTab</name></types>
+    <types><members>Event__c-Event Layout</members><members>Event__c-Academic Event Layout</members><members>Event__c-Recreational Event Layout</members><name>Layout</name></types>
+    <types><members>Contact</members><name>MatchingRules</name></types>
+    <types><members>Contact.Block_Duplicate_Student_Email</members><members>Contact.Warn_Duplicate_Student_Name_Phone</members><name>DuplicateRule</name></types>
+    <types><members>Campus_Event_Emails/Event_Registration_Confirmation_Lightning</members><name>EmailTemplate</name></types>
+    <types><members>Campus_Event_Emails</members><name>EmailFolder</name></types>
+    <types><members>Registration__c</members><name>Workflow</name></types>
+    <types><members>Campus_Events_Admin</members><members>Society_President</members><members>Volunteer</members><members>Fitness_Hub_Access</members><name>PermissionSet</name></types>
+    <types><members>Student_Affairs_Officer</members><members>Society_President</members><members>Volunteer</members><name>Role</name></types>
+    <types><members>Event__c.Volunteers_Read_Open_Events</members><name>SharingCriteriaRule</name></types>
+    <types><members>Events_with_Registrations</members><name>ReportType</name></types>
+    <types><members>Campus_Events</members><name>ReportFolder</name></types>
+    <types><members>Campus_Events/Event_Attendance_Rate</members><members>Campus_Events/Registrations_by_Department</members><members>Campus_Events/Society_vs_Event_Status</members><members>Campus_Events/Upcoming_Events_This_Month</members><members>Campus_Events/Upcoming_Events_Dashboard_Table</members><name>Report</name></types>
+    <types><members>Campus_Events</members><name>DashboardFolder</name></types>
+    <types><members>Campus_Events/Student_Affairs_Dashboard</members><name>Dashboard</name></types>
+    <types><members>Quick_Event_Registration</members><members>Registration_After_Save</members><members>Registration_Before_Save</members><members>Daily_Event_Closer</members><members>Calculate_Society_Stats</members><members>Venue_Emergency_Handler</members><name>Flow</name></types>
+    <types><members>campusEventsHome</members><members>workspaceSwitcher</members><members>fitnessHubDashboard</members><members>fitnessInsightsPanel</members><members>enterpriseObjectWorkspace</members><name>LightningComponentBundle</name></types>
+    <types><members>Campus_Events_Home</members><members>Campus_Event_Record_Page</members><members>Campus_Events_Workspace_Utility</members><members>Fitness_Hub_Workspace_Utility</members><members>Home_Page_Default</members><members>Enterprise_Contacts_Workspace</members><members>Enterprise_Societies_Workspace</members><members>Enterprise_Events_Workspace</members><members>Enterprise_Registrations_Workspace</members><members>Enterprise_Classes_Workspace</members><members>Enterprise_Trainers_Workspace</members><members>Enterprise_Class_Bookings_Workspace</members><members>Enterprise_Payments_Workspace</members><members>Enterprise_Loyalty_Workspace</members><members>Enterprise_Lab_Students_Workspace</members><members>Enterprise_Lab_Classes_Workspace</members><name>FlexiPage</name></types>
+    <version>61.0</version>
+</Package>

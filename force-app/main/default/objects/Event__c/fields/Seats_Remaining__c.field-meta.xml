@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Seats_Remaining__c</fullName>
+    <label>Seats Remaining</label>
+    <type>Number</type>
+    <precision>6</precision>
+    <scale>0</scale>
+    <formula>Capacity__c - Total_Registrations__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+</CustomField>

@@ -1,0 +1,5 @@
+.workspace-switcher {
+    background: var(--lwc-colorBackgroundAlt, #ffffff);
+    border-radius: 0.5rem;
+    max-width: 28rem;
+}

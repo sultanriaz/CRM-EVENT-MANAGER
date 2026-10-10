@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Lab Student Access</label>
+    <hasActivationRequired>false</hasActivationRequired>
+    <fieldPermissions><editable>true</editable><field>Lab_Class__c.Max_Strength__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Lab_Student__c.Student_ID__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Lab_Student__c.Gender__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Lab_Student__c.City__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Lab_Student__c.Country__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Lab_Student__c.Year_of_Birth__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Lab_Student__c.Age__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Lab_Student__c.Class__c</field><readable>true</readable></fieldPermissions>
+    <objectPermissions><allowCreate>true</allowCreate><allowDelete>true</allowDelete><allowEdit>true</allowEdit><allowRead>true</allowRead><modifyAllRecords>false</modifyAllRecords><object>Lab_Class__c</object><viewAllRecords>true</viewAllRecords></objectPermissions>
+    <objectPermissions><allowCreate>true</allowCreate><allowDelete>true</allowDelete><allowEdit>true</allowEdit><allowRead>true</allowRead><modifyAllRecords>false</modifyAllRecords><object>Lab_Student__c</object><viewAllRecords>true</viewAllRecords></objectPermissions>
+    <tabSettings><tab>Lab_Class__c</tab><visibility>Visible</visibility></tabSettings>
+    <tabSettings><tab>Lab_Student__c</tab><visibility>Visible</visibility></tabSettings>
+</PermissionSet>

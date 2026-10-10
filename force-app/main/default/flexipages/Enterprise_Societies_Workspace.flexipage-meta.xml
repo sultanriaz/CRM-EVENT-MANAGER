@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlexiPage xmlns="http://soap.sforce.com/2006/04/metadata">
+    <flexiPageRegions><itemInstances><componentInstance>
+        <componentInstanceProperties><name>objectApiName</name><value>Society__c</value></componentInstanceProperties>
+        <componentName>enterpriseObjectWorkspace</componentName><identifier>c_enterpriseObjectWorkspace_societies</identifier>
+    </componentInstance></itemInstances><name>main</name><type>Region</type></flexiPageRegions>
+    <masterLabel>Societies Workspace</masterLabel>
+    <template><name>flexipage:defaultAppHomeTemplate</name></template>
+    <type>AppPage</type>
+</FlexiPage>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Campus Events Admin</label>
+    <classAccesses><apexClass>EnterpriseWorkspaceController</apexClass><enabled>true</enabled></classAccesses>
+    <hasActivationRequired>false</hasActivationRequired>
+    <applicationVisibilities><application>Campus_Events_Manager</application><visible>true</visible></applicationVisibilities>
+    <fieldPermissions><editable>true</editable><field>Society__c.Active__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Society__c.Category__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Society__c.Completed_Events__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Society__c.Faculty_Advisor_Email__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Society__c.Founded_Date__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Society__c.Total_Attendees__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Society__c.Website__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Event__c.Capacity__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Event__c.Description__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Event__c.End_Date_Time__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Event__c.Event_Duration_Hours__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Event__c.Fill_Status__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Event__c.Seats_Remaining__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Event__c.Session_Type__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Event__c.Society__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Event__c.Society_Category__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Event__c.Start_Date_Time__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Event__c.Status__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Event__c.Ticket_Price__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Event__c.Total_Attended__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>false</editable><field>Event__c.Total_Registrations__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Event__c.Venue__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Registration__c.Attended__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Registration__c.Registration_Date__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Registration__c.Skills_of_Interest__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Registration__c.Student__c</field><readable>true</readable></fieldPermissions>
+    <fieldPermissions><editable>true</editable><field>Registration__c.Student_Department__c</field><readable>true</readable></fieldPermissions>
+    <objectPermissions><allowCreate>true</allowCreate><allowDelete>true</allowDelete><allowEdit>true</allowEdit><allowRead>true</allowRead><modifyAllRecords>false</modifyAllRecords><object>Society__c</object><viewAllRecords>false</viewAllRecords></objectPermissions>
+    <objectPermissions><allowCreate>true</allowCreate><allowDelete>true</allowDelete><allowEdit>true</allowEdit><allowRead>true</allowRead><modifyAllRecords>false</modifyAllRecords><object>Event__c</object><viewAllRecords>true</viewAllRecords></objectPermissions>
+    <objectPermissions><allowCreate>true</allowCreate><allowDelete>true</allowDelete><allowEdit>true</allowEdit><allowRead>true</allowRead><modifyAllRecords>false</modifyAllRecords><object>Registration__c</object><viewAllRecords>false</viewAllRecords></objectPermissions>
+    <tabSettings><tab>Society__c</tab><visibility>Visible</visibility></tabSettings>
+    <tabSettings><tab>Event__c</tab><visibility>Visible</visibility></tabSettings>
+    <tabSettings><tab>Registration__c</tab><visibility>Visible</visibility></tabSettings>
+    <tabSettings><tab>Enterprise_Contacts</tab><visibility>Visible</visibility></tabSettings>
+    <tabSettings><tab>Enterprise_Societies</tab><visibility>Visible</visibility></tabSettings>
+    <tabSettings><tab>Enterprise_Events</tab><visibility>Visible</visibility></tabSettings>
+    <tabSettings><tab>Enterprise_Registrations</tab><visibility>Visible</visibility></tabSettings>
+</PermissionSet>

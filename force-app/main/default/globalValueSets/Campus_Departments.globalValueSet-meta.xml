@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>CS</fullName>
+        <default>false</default>
+        <label>CS</label>
+    </customValue>
+    <customValue>
+        <fullName>SE</fullName>
+        <default>false</default>
+        <label>SE</label>
+    </customValue>
+    <customValue>
+        <fullName>EE</fullName>
+        <default>false</default>
+        <label>EE</label>
+    </customValue>
+    <customValue>
+        <fullName>BBA</fullName>
+        <default>false</default>
+        <label>BBA</label>
+    </customValue>
+    <customValue>
+        <fullName>Math</fullName>
+        <default>false</default>
+        <label>Math</label>
+    </customValue>
+    <masterLabel>Campus Departments</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

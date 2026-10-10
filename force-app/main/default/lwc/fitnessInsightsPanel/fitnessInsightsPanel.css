@@ -1,0 +1,35 @@
+:host { display: block; margin-top: 24px; color: #ffffff; font-family: 'Segoe UI', system-ui, sans-serif; }
+.panel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+.insights-card { grid-column: 1 / -1; }
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+h3 { font-size: 14px; text-transform: uppercase; letter-spacing: 1px; color: #94a3b8; margin: 0 0 16px 0; font-weight: 400; }
+.ring-wrap { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.ring { width: 130px; height: 130px; }
+.ring-bg { fill: none; stroke: rgba(255, 255, 255, 0.08); stroke-width: 10; }
+.ring-fg { fill: none; stroke: #22d3ee; stroke-width: 10; stroke-linecap: round; filter: drop-shadow(0 0 6px rgba(34, 211, 238, 0.6)); }
+.ring-text { fill: #ffffff; font-size: 24px; font-weight: 700; }
+.ring-stats { font-size: 13px; color: #94a3b8; line-height: 1.9; }
+.ring-stats strong { color: #ffffff; }
+.ring-stats .risk strong { color: #f0abfc; }
+.trainer-row { margin-bottom: 14px; }
+.trainer-head { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 14px; }
+.trainer-name { font-weight: 600; }
+.trainer-count { color: #22d3ee; font-weight: 600; }
+.trainer-track { height: 8px; background: rgba(255, 255, 255, 0.08); border-radius: 999px; overflow: hidden; }
+.trainer-fill { height: 100%; border-radius: 999px; background: linear-gradient(90deg, #6366f1, #22d3ee); box-shadow: 0 0 10px rgba(34, 211, 238, 0.4); }
+.trainer-meta { font-size: 11px; color: #94a3b8; margin-top: 3px; }
+.insights-card { display: block; }
+.insight { border-left: 3px solid #94a3b8; background: rgba(255, 255, 255, 0.04); border-radius: 0 12px 12px 0; padding: 12px 16px; margin-bottom: 12px; }
+.insight-good { border-left-color: #4ade80; }
+.insight-warn { border-left-color: #f87171; }
+.insight-info { border-left-color: #22d3ee; }
+.insight-title { font-size: 14px; font-weight: 600; }
+.insight-detail { font-size: 12px; color: #94a3b8; margin-top: 4px; }
+.empty { color: #94a3b8; font-size: 13px; }

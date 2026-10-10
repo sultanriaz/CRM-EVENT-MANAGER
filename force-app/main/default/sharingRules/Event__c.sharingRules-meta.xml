@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SharingRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sharingCriteriaRules>
+        <fullName>Volunteers_Read_Open_Events</fullName>
+        <accessLevel>Read</accessLevel>
+        <label>Volunteers Read Open Events</label>
+        <criteriaItems>
+            <field>Status__c</field>
+            <operation>equals</operation>
+            <value>Open for Registration</value>
+        </criteriaItems>
+        <sharedTo>
+            <role>Volunteer</role>
+        </sharedTo>
+    </sharingCriteriaRules>
+</SharingRules>

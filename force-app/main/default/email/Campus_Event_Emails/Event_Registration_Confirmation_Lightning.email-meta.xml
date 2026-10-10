@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+
+<available>true</available><description>Registration confirmation for Campus Events Manager</description><encodingKey>UTF-8</encodingKey>
+<name>Event Registration Confirmation</name><relatedEntityType>Registration__c</relatedEntityType><style>none</style>
+<subject>Registration confirmed: {{{RelatedTo.Event__r.Name}}}</subject><type>custom</type><uiType>SFX</uiType>
+</EmailTemplate>

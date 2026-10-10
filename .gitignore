@@ -1,0 +1,41 @@
+# Salesforce CLI local state and authentication data
+.sf/
+.sfdx/
+.localdevserver/
+
+# Local backups and patch/deployment run artifacts
+backup/
+campus_patch_runs/
+*.bak
+*.bak[0-9]
+
+# Generated Salesforce org inspection and request/response exports
+org-info.json
+UI_FAILED_DEPLOY_REPORT.json
+all-reporttypes*.json
+*-reporttype-desc*.json
+reporttype-*.json
+reporttype-full-flat.txt
+report-body*.json
+req-*.json
+*-schema.json
+*-check.json
+describe-sample.json
+sample-dashboard-desc.json
+workingtype.json
+test_report.js
+
+# Dependency and test output
+node_modules/
+coverage/
+.nyc_output/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.swp
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini

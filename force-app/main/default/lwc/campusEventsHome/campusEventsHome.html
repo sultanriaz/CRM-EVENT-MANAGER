@@ -1,0 +1,99 @@
+<template>
+    <main class={shellClass}>
+        <header class="hero">
+            <div>
+                <p class="eyebrow">CUI Sahiwal · Student Affairs</p>
+                <h1>Campus Events Manager</h1>
+                <p class="subtitle">Plan events, manage registrations, and monitor participation from one workspace.</p>
+            </div>
+            <div class="hero-actions">
+                <c-workspace-switcher current-app="c__Campus_Events_Manager"></c-workspace-switcher>
+                <lightning-button-icon icon-name={themeIcon} alternative-text={themeLabel} title={themeLabel} onclick={toggleTheme}></lightning-button-icon>
+                <lightning-button-icon icon-name="utility:refresh" alternative-text="Refresh dashboard" title="Refresh dashboard" onclick={refresh} disabled={isRefreshing}></lightning-button-icon>
+            </div>
+        </header>
+
+        <section class="quick-actions" aria-label="Quick actions">
+            <lightning-button variant="brand" label="New Event" icon-name="utility:add" data-object="Event__c" data-action="new" onclick={navigateObject}></lightning-button>
+            <lightning-button label="New Society" icon-name="utility:add" data-object="Society__c" data-action="new" onclick={navigateObject}></lightning-button>
+            <lightning-button label="Browse Registrations" icon-name="utility:groups" data-object="Registration__c" onclick={navigateObject}></lightning-button>
+            <lightning-button label="Reports" icon-name="utility:chart" data-object="Report" onclick={navigatePage}></lightning-button>
+            <lightning-button label="Dashboard" icon-name="utility:dashboard" data-object="Dashboard" onclick={navigatePage}></lightning-button>
+        </section>
+
+        <template if:true={error}>
+            <div class="error" role="alert">
+                <lightning-icon icon-name="utility:error" size="small" alternative-text="Error"></lightning-icon>
+                <span>{errorMessage}</span>
+                <lightning-button label="Try again" onclick={refresh}></lightning-button>
+            </div>
+        </template>
+
+        <template if:false={data}>
+            <section class="kpi-grid" aria-label="Loading dashboard metrics">
+                <template for:each={statusBars} for:item="placeholder">
+                    <div key={placeholder.key} class="skeleton"></div>
+                </template>
+                <div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div>
+            </section>
+        </template>
+
+        <template if:true={data}>
+            <section class="kpi-grid" aria-label="Campus Events metrics">
+                <article class="kpi"><span>Total Societies</span><strong>{data.totalSocieties}</strong><small>{data.activeSocieties} active</small></article>
+                <article class="kpi"><span>Total Events</span><strong>{data.totalEvents}</strong><small>{data.upcomingEvents} upcoming</small></article>
+                <article class="kpi"><span>Open Registration</span><strong>{data.openEvents}</strong><small>events accepting students</small></article>
+                <article class="kpi"><span>Registrations</span><strong>{data.totalRegistrations}</strong><small>{data.totalAttendees} attended</small></article>
+                <article class="kpi accent"><span>Attendance Rate</span><strong>{attendanceLabel}</strong><small>across recorded registrations</small></article>
+            </section>
+
+            <section class="content-grid">
+                <article class="panel panel-wide">
+                    <div class="panel-heading"><div><p class="eyebrow">Schedule</p><h2>Upcoming events</h2></div><lightning-button label="View all" variant="base" data-object="Event__c" onclick={navigateObject}></lightning-button></div>
+                    <template if:true={data.upcoming.length}>
+                        <div class="record-list">
+                            <template for:each={data.upcoming} for:item="eventItem">
+                                <button key={eventItem.id} class="record-row" data-id={eventItem.id} onclick={navigateRecord}>
+                                    <span class="date-chip"><lightning-formatted-date-time value={eventItem.startsAt} month="short" day="2-digit"></lightning-formatted-date-time></span>
+                                    <span class="record-main"><strong>{eventItem.name}</strong><small>{eventItem.venue} · {eventItem.seatsRemaining} seats remaining</small></span>
+                                    <span class="badge">{eventItem.status}</span>
+                                    <lightning-icon icon-name="utility:chevronright" size="xx-small" alternative-text="Open"></lightning-icon>
+                                </button>
+                            </template>
+                        </div>
+                    </template>
+                    <template if:false={data.upcoming.length}><div class="empty"><lightning-icon icon-name="utility:event" alternative-text="No events"></lightning-icon><h3>No upcoming events</h3><p>Create an event to start building the campus calendar.</p></div></template>
+                </article>
+
+                <article class="panel">
+                    <div class="panel-heading"><div><p class="eyebrow">Distribution</p><h2>Events by status</h2></div></div>
+                    <template for:each={statusBars} for:item="item"><div key={item.key} class="bar-row"><div><span>{item.label}</span><strong>{item.value}</strong></div><div class="bar-track"><span class="bar-fill status" style={item.style}></span></div></div></template>
+                    <template if:false={statusBars.length}><div class="empty compact"><p>No event data yet.</p></div></template>
+                </article>
+
+                <article class="panel">
+                    <div class="panel-heading"><div><p class="eyebrow">Participation</p><h2>Registrations by department</h2></div></div>
+                    <template for:each={departmentBars} for:item="item"><div key={item.key} class="bar-row"><div><span>{item.label}</span><strong>{item.value}</strong></div><div class="bar-track"><span class="bar-fill department" style={item.style}></span></div></div></template>
+                    <template if:false={departmentBars.length}><div class="empty compact"><p>No registration data yet.</p></div></template>
+                </article>
+
+                <article class="panel panel-wide">
+                    <div class="panel-heading"><div><p class="eyebrow">Activity</p><h2>Recent registrations</h2></div><lightning-button label="View all" variant="base" data-object="Registration__c" onclick={navigateObject}></lightning-button></div>
+                    <template if:true={data.recentRegistrations.length}>
+                        <div class="record-list">
+                            <template for:each={data.recentRegistrations} for:item="registration">
+                                <button key={registration.id} class="record-row" data-id={registration.id} onclick={navigateRecord}>
+                                    <span class="avatar" aria-hidden="true">ST</span>
+                                    <span class="record-main"><strong>{registration.studentName}</strong><small>{registration.registrationNumber} · {registration.eventName}</small></span>
+                                    <span class="badge"><template if:true={registration.attended}>Attended</template><template if:false={registration.attended}>Registered</template></span>
+                                    <lightning-icon icon-name="utility:chevronright" size="xx-small" alternative-text="Open"></lightning-icon>
+                                </button>
+                            </template>
+                        </div>
+                    </template>
+                    <template if:false={data.recentRegistrations.length}><div class="empty compact"><p>No registrations have been recorded.</p></div></template>
+                </article>
+            </section>
+        </template>
+    </main>
+</template>

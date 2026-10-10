@@ -1,0 +1,3 @@
+<aura:component implements="lightning:actionOverride,force:appHostable,force:hasSObjectName,flexipage:availableForAllPageTypes" access="global">
+    <c:enterpriseObjectWorkspace objectApiName="{!v.sObjectName}" />
+</aura:component>

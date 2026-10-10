@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Skills_of_Interest__c</fullName>
+    <label>Skills of Interest</label>
+    <type>MultiselectPicklist</type>
+    <trackTrending>false</trackTrending>
+    <visibleLines>5</visibleLines>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value><fullName>Coding</fullName><default>false</default><label>Coding</label></value>
+            <value><fullName>Design</fullName><default>false</default><label>Design</label></value>
+            <value><fullName>Public Speaking</fullName><default>false</default><label>Public Speaking</label></value>
+            <value><fullName>Management</fullName><default>false</default><label>Management</label></value>
+            <value><fullName>Photography</fullName><default>false</default><label>Photography</label></value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

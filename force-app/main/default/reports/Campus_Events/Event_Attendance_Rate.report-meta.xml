@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+  <aggregates>
+    <calculatedFormula>IF(RowCount = 0, 0, Registration__c.Attended__c:SUM / RowCount)</calculatedFormula>
+    <datatype>percent</datatype>
+    <description>Percentage of registered students marked Attended for each event.</description>
+    <developerName>FORMULA1</developerName>
+    <isActive>true</isActive>
+    <masterLabel>Attendance Rate</masterLabel>
+    <scale>2</scale>
+  </aggregates>
+  <columns>
+    <field>Event__c.Registrations__r$Name</field>
+  </columns>
+  <columns>
+    <field>Event__c$Society_Category__c</field>
+  </columns>
+  <columns>
+    <aggregateTypes>Sum</aggregateTypes>
+    <field>Event__c.Registrations__r$Attended__c</field>
+  </columns>
+  <format>Summary</format>
+  <groupingsDown>
+    <dateGranularity>Day</dateGranularity>
+    <field>Event__c$Name</field>
+    <sortOrder>Desc</sortOrder>
+  </groupingsDown>
+  <name>Event Attendance Rate</name>
+  <params>
+    <name>co</name>
+    <value>1</value>
+  </params>
+  <reportType>Events_with_Registrations__c</reportType>
+  <scope>user</scope>
+  <showDetails>true</showDetails>
+  <showGrandTotal>true</showGrandTotal>
+  <showSubTotals>true</showSubTotals>
+  <timeFrameFilter>
+    <dateColumn>Event__c$Start_Date_Time__c</dateColumn>
+    <interval>INTERVAL_CURRENT</interval>
+  </timeFrameFilter>
+</Report>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Venue__c</fullName>
+    <label>Venue</label>
+    <type>Picklist</type>
+    <trackTrending>false</trackTrending>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value><fullName>Auditorium</fullName><default>false</default><label>Auditorium</label></value>
+            <value><fullName>Seminar Hall</fullName><default>false</default><label>Seminar Hall</label></value>
+            <value><fullName>Sports Complex</fullName><default>false</default><label>Sports Complex</label></value>
+            <value><fullName>Lab Block</fullName><default>false</default><label>Lab Block</label></value>
+            <value><fullName>Online</fullName><default>false</default><label>Online</label></value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+
+<fullName>No_Overbooked_Or_Closed_Event</fullName><active>true</active>
+<errorConditionFormula>AND(ISNEW(), OR(ISPICKVAL(Event__r.Status__c, &quot;Full&quot;), ISPICKVAL(Event__r.Status__c, &quot;Planned&quot;), Event__r.Seats_Remaining__c &lt;= 0))</errorConditionFormula>
+<errorDisplayField>Event__c</errorDisplayField><errorMessage>Registration is open only when the event has available seats.</errorMessage>
+</ValidationRule>

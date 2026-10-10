@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Academic_Event</fullName>
+    <active>true</active>
+    <label>Academic Event</label>
+    <picklistValues>
+        <picklist>Session_Type__c</picklist>
+        <values><fullName>Seminar</fullName><default>false</default></values>
+        <values><fullName>Talk</fullName><default>false</default></values>
+        <values><fullName>Workshop</fullName><default>false</default></values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Venue__c</picklist>
+        <values><fullName>Auditorium</fullName><default>false</default></values>
+        <values><fullName>Seminar Hall</fullName><default>false</default></values>
+        <values><fullName>Lab Block</fullName><default>false</default></values>
+        <values><fullName>Online</fullName><default>false</default></values>
+    </picklistValues>
+</RecordType>

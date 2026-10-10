@@ -2,6 +2,7 @@
     <div class="glass-dashboard">
         <div class="header header-row">
             <h1>Fitness Hub <span>Command Center</span></h1>
+            <c-workspace-switcher current-app="c__Community_Fitness_Wellness_Hub"></c-workspace-switcher>
             <button class="refresh-btn" onclick={handleRefresh} disabled={isRefreshing}>{refreshLabel}</button>
         </div>
 
@@ -60,5 +61,7 @@
                 </template>
             </div>
         </div>
+
+        <c-fitness-insights-panel></c-fitness-insights-panel>
     </div>
 </template>

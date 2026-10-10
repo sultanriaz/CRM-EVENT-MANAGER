@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
+  <backgroundEndColor>#FFFFFF</backgroundEndColor>
+  <backgroundFadeDirection>Diagonal</backgroundFadeDirection>
+  <backgroundStartColor>#FFFFFF</backgroundStartColor>
+  <dashboardFilters>
+    <dashboardFilterOptions>
+      <operator>equals</operator>
+      <values>Technical</values>
+    </dashboardFilterOptions>
+    <dashboardFilterOptions>
+      <operator>equals</operator>
+      <values>Sports</values>
+    </dashboardFilterOptions>
+    <name>Society Category</name>
+  </dashboardFilters>
+  <dashboardType>SpecifiedUser</dashboardType>
+  <isGridLayout>false</isGridLayout>
+  <leftSection>
+    <columnSize>Medium</columnSize>
+    <components>
+      <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+      <componentType>Gauge</componentType>
+      <indicatorHighColor>#2E844A</indicatorHighColor>
+      <indicatorMiddleColor>#F4B400</indicatorMiddleColor>
+      <indicatorLowColor>#BA0517</indicatorLowColor>
+      <displayUnits>Auto</displayUnits>
+      <groupingSortProperties />
+      <dashboardFilterColumns>
+        <column>Event__c$Society_Category__c</column>
+      </dashboardFilterColumns>
+      <header>Attendance Rate</header>
+      <report>Campus_Events/Event_Attendance_Rate</report>
+      <showValues>true</showValues>
+    </components>
+    <components>
+      <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+      <componentType>Table</componentType>
+      <indicatorHighColor>#2E844A</indicatorHighColor>
+      <indicatorMiddleColor>#F4B400</indicatorMiddleColor>
+      <indicatorLowColor>#BA0517</indicatorLowColor>
+      <displayUnits>Auto</displayUnits>
+      <groupingSortProperties />
+      <dashboardFilterColumns>
+        <column>Event__c$Society_Category__c</column>
+      </dashboardFilterColumns>
+      <header>Upcoming Events</header>
+      <report>Campus_Events/Upcoming_Events_Dashboard_Table</report>
+    </components>
+  </leftSection>
+  <middleSection>
+    <columnSize>Medium</columnSize>
+    <components>
+      <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+      <chartAxisRange>Auto</chartAxisRange>
+      <componentType>Donut</componentType>
+      <displayUnits>Auto</displayUnits>
+      <groupingSortProperties />
+      <dashboardFilterColumns>
+        <column>Event__c$Society_Category__c</column>
+      </dashboardFilterColumns>
+      <header>Society Event Status</header>
+      <report>Campus_Events/Society_vs_Event_Status</report>
+      <showValues>true</showValues>
+      <sortBy>RowLabelAscending</sortBy>
+    </components>
+  </middleSection>
+  <rightSection>
+    <columnSize>Medium</columnSize>
+    <components>
+      <autoselectColumnsFromReport>true</autoselectColumnsFromReport>
+      <chartAxisRange>Auto</chartAxisRange>
+      <componentType>Bar</componentType>
+      <displayUnits>Auto</displayUnits>
+      <groupingSortProperties />
+      <dashboardFilterColumns>
+        <column>Event__c$Society_Category__c</column>
+      </dashboardFilterColumns>
+      <header>Registrations by Department</header>
+      <report>Campus_Events/Registrations_by_Department</report>
+      <showValues>true</showValues>
+      <sortBy>RowLabelAscending</sortBy>
+    </components>
+  </rightSection>
+  <runningUser>superior7891_61lsg4rtgvkm@gmail.com</runningUser>
+  <textColor>#000000</textColor>
+  <title>Student Affairs Dashboard</title>
+  <titleColor>#000000</titleColor>
+  <titleSize>12</titleSize>
+</Dashboard>
